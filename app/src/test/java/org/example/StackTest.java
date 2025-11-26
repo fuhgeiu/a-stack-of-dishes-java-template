@@ -36,7 +36,5 @@ public class StackTest {
         assertEquals(stack.peek(),redDish);
 
         assertEquals(stack.isEmpty(),false);
-
     }
-
 }

@@ -2,13 +2,13 @@ package org.example;
 
 public class Stack<T> {
 
-    private T[] stackArray;
+    private T[] data;
     private int size;
 
 
     public Stack(int capacity) {
 
-        stackArray = (T[]) new Object[capacity];
+        data = (T[]) new Object[capacity];
         size = -1;
     }
 
@@ -19,7 +19,7 @@ public class Stack<T> {
             System.out.println("Stack is full. Cannot push: " + item);
             return;
         }
-        stackArray[++size] = item;
+        data[++size] = item;
     }
 
     public T pop() {
@@ -30,8 +30,8 @@ public class Stack<T> {
             return null;
         }
 
-        T removed = stackArray[size];
-        stackArray[size] = null;
+        T removed = data[size];
+        data[size] = null;
         size--;
         return removed;
     }
@@ -43,12 +43,12 @@ public class Stack<T> {
             System.out.println("Stack is empty. Nothing to peek.");
             return null;
         }
-        return stackArray[size];
+        return data[size];
     }
 
     public int size() {return size + 1;}
 
-    public boolean isFull() {return size == stackArray.length - 1;}
+    public boolean isFull() {return size == data.length - 1;}
 
     public boolean isEmpty() {return size == -1;}
 }
